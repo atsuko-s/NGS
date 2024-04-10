@@ -1,0 +1,25 @@
+html {
+    font-size: 100%;
+  }
+  body {
+    color: #333;
+    font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    letter-spacing: 0.1em;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+    vertical-align: bottom;
+  }
+  li {
+    list-style: none;
+  }
+  /*コンテンツ幅を設定するための共通クラス*/
+  .wrapper {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+  }

@@ -38,6 +38,52 @@ header
   #header .site-title a {
     display: block;
   }
+  .gnavi__wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+.gnavi_lists {
+    display: flex;
+}
+.gnavi_list {
+    width: 20%;
+    height: 60px;
+    background-color: #E5F0F8;
+    position: relative;
+    transition: all .3s;
+}
+.gnavi_list:hover {
+    background-color: #0071BB;
+}
+.gnavi_list:not(:first-child)::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+.gnavi_list:hover::before {
+    background-color: #0071BB;
+}
+.gnavi_list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #1b4059;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    transition: all .3s;
+}
+.gnavi_list:hover a {
+    color: #fff;
+}
 
   .dropdown_lists {
     display: none;/*デフォルトでは非表示の状態にしておく*/

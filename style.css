@@ -27,59 +27,97 @@ html {
 /*-------------------------------------------
 header
 -------------------------------------------*/
-#header {
-    height: 100px;
-    padding: 40px 0 0 50px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  #header .site-title {
-    width: 100px;
-    line-height: 1px;
+  
+  header {
+    background-color: #969da3;
   }
-  #header .site-title a {
-    display: block;
-  }
-  /* ナビゲーションメニュー */
-.nav-menu {
-    background-color: #333; /* メニューの背景色 */
-    color: #fff; /* メニューテキストの色 */
-  }
-  .menu-list {
+  
+  .inner {
     display: flex;
-    justify-content: center; /* メニューアイテムを中央揃えに */
-  }
-  .menu-item {
-    border-left: 1px solid #fff; /* メニューアイテムの左ボーダー */
-    position: relative;
-  }
-  .menu-item:last-child {
-    border-right: 1px solid #fff; /* 最後のメニューアイテムの右ボーダー */
-  }
-  
-  /* メニューアイテムのホバースタイル */
-  .menu-item:hover .drop-menu-list {
-    visibility: visible; /* 下層メニューを表示 */
-  }
-  
-  .menu-item a {
+    justify-content: space-between;
     align-items: center;
-    color: #fff; /* メニューアイテム内のリンクテキストの色 */
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    text-decoration: none; /* リンクの下線を非表示 */
-    width: 120px;
+    padding: 0 60px;
   }
   
-  /* ドロップダウンメニュー */
-  .drop-menu {
-    position: relative;
+  .logo img {
+    width: 250px;
   }
-  .drop-menu-list {
-    background-color: #696969; /* ドロップダウンメニューの背景色 */
-    left: 0;
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu li {
+    position: relative;
+    list-style: none;
+  }
+  
+  .menu li a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    padding: 30px;
+  }
+  
+  /* 通常時は非表示 */
+  .child_menu {
     position: absolute;
     top: 100%;
-    visibility: hidden; /* 下層メニューを非表示 */
-    width: max-content;
-    z-index: 1;
+    left: 0;
+    background-color: #ebebeb;
+    /* ドロップダウンメニューを透明化 */
+    opacity: 0;
+    /* 透明化だけではクリックできてしまうので以下も追記 */
+    visibility: hidden;
+    /* フェードで表示非表示される時間の指定 */
+    transition: all 1s;
+    width: 100%;
   }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  /* ナビゲーション下矢印部分 */
+  .dropdown::after {
+    content: '';
+    position: absolute;
+    top: 43%;
+    right: 10px;
+    transform: rotate(135deg);
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+  
+  .dropdown:hover+.dropdown_menu,
+  .dropdown_menu:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .child_menu li {
+    padding: 0;
+  }
+  
+  .child_menu li a {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .child_menu li a:hover {
+    background-color: #acacac;
+  }
+  

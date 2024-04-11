@@ -11,47 +11,38 @@
 
   </head>
   <body>
-    <header id="header">
-        <h1 class="site-title">
-          <a href="#"><img src="img/ngs_title.png" alt="PSO2_NGS"></a>
-        </h1>
-        <nav class="nav-menu">
-          <ul class="menu-list">
-            <li class="menu-item">
-              <a href="#">Home</a>
-            </li>
-            <li class="menu-item drop-menu">
-              <a href="#">ニュース</a>
-              <ul class="drop-menu-list">
-                <li class="drop-menu-item">
-                  <a href="#">ニュース</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="#">世界観</a>
-              <ul class="drop-menu-list">
-                <li class="drop-menu-item">
-                  <a href="#">キャラクタークリエイト</a>
-                </li>
-                <li class="drop-menu-item">
-                  <a href="#">クラフト</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="#">バトルアクション</a>
-            </li>
-            <li class="menu-item">
-              <a href="#">キャラクター</a>
-            </li>
-            <li class="menu-item">
-              <a href="#">メインストーリー</a>
-            </li>
-          </ul>
-        </nav>
-      
-      </header>
+    <header>
+    <div class="inner">
+      <div class="logo"><img src="img/ngs_title.png" alt="PSO "_NGS"></div>
+      <nav>
+        <ul class="menu">
+          <li>
+            <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
+            <a class="dropdown child" href="">ニュース</a>
+            <!-- ドロップダウンメニューはここから -->
+            <ul class="dropdown_menu child_menu">
+              <li><a href="">ニュース</a></li>
+            </ul>
+          </li>
+          <li>
+            <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
+            <a class="dropdown child" href="">世界観</a>
+            <!-- ドロップダウンメニューはここから -->
+            <ul class="dropdown_menu child_menu">
+              <li><a href="">キャラクタークリエイト</a></li>
+              <li><a href="#">クラフト</a></li>
+              <li><a href="#">バトルアクション</a></li>
+              <li><a href="#">キャラクター</a></li>
+              <li><a href="#">メインストーリー</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+    </header>
+           
+  
       <main>
         <!-- メインビジュアル -->
         <section id="image-carousel" class="splide" aria-label="お気に入りの写真">

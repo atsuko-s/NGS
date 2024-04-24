@@ -181,10 +181,6 @@ margin:0 5px;
 
 /*========= レイアウトのためのCSS ===============*/
 
-body{
-background:#eee;
-}
-
 ul{
 margin:0;
 padding: 0;
@@ -199,4 +195,44 @@ a:hover,
 a:active{
 text-decoration: none;
 }
-  
+
+.wrapper {
+  /*コンテンツ幅を設定するための共通クラス*/
+  width: 100%;
+  margin: 0 auto;
+  background-color: #cddbe6;
+  color: #333;
+}
+
+/*セクションタイトル用の共通クラス*/
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 100px;
+  text-align: center;
+  position: relative;
+}
+
+/*世界観*/
+#sekaikann .sekai1{
+  display: flex;
+} 
+
+#sekaikann .sekai1 img {
+  width: 40%; 
+  height: auto;
+}
+
+#sekaikann sekai2 {
+  display: flex;
+}
+
+#sekaikann .sekai2 img {
+  width: 30％; 
+  height: auto;
+}
+
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+

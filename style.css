@@ -179,59 +179,223 @@ margin:0 5px;
   background:#333;/*ドットボタンの現在地表示の色*/
 }
 
-/*========= レイアウトのためのCSS ===============*/
-
-ul{
-margin:0;
-padding: 0;
-list-style: none;
-}
-
-a{
-color: #333;
-}
-
-a:hover,
-a:active{
-text-decoration: none;
-}
-
 .wrapper {
   /*コンテンツ幅を設定するための共通クラス*/
-  width: 100%;
+  width: 1000px;
   margin: 0 auto;
   background-color: #cddbe6;
   color: #333;
+  padding-top: 20px;
 }
 
 /*セクションタイトル用の共通クラス*/
 .section-title {
-  font-size: 2.25rem;
-  margin-bottom: 100px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
   text-align: center;
   position: relative;
 }
 
 /*世界観*/
-#sekaikann .sekai1{
+#sekaikann .sekai1 {
   display: flex;
+  padding:20px;
 } 
-
-#sekaikann .sekai1 img {
-  width: 40%; 
-  height: auto;
+#sekaikann .sekai1 .p {
+  width: 50%;
 }
 
-#sekaikann sekai2 {
-  display: flex;
+#sekaikann .sekai1 img {
+  max-width: 50%;
+  /* 画像の幅を親要素の50%までに制限 */
+  height: auto;
+  /* 高さを自動で調整 */
+}
+
+#sekaikann .sekai2 {
+  display: flex; /* 画像を横に並べるために flexbox を使用 */
+  justify-content: space-between; /* 画像間のスペースを均等に配置 */
+  margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
+  padding:20px;
 }
 
 #sekaikann .sekai2 img {
-  width: 30％; 
-  height: auto;
+  width: 30%; /* 各画像の幅を設定 */
+  height: auto; /* 高さを自動調整 */
 }
 
+/*キャラクタークリエイト*/
+#kurieito .kurieito1 {
+  display: flex;
+  padding:20px;
+} 
+#kurieito .kurieito1 .p {
+  width: 50%;
+}
+#kurieito .kurieito1 img {
+  max-width: 50%;
+  /* 画像の幅を親要素の50%までに制限 */
+  height: auto;
+  /* 高さを自動で調整 */
+}
 
+#kurieito .kurieito2 {
+  display: flex; /* 画像を横に並べるために flexbox を使用 */
+  justify-content: space-between; /* 画像間のスペースを均等に配置 */
+  margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
+  padding:20px;
+}
+
+#kurieito .kurieito2 img {
+  width: 30%; /* 各画像の幅を設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+/*クラフト*/
+#kurahuto .kurahuto1 {
+  display: flex;
+  padding:20px;
+} 
+#kurahuto .kurahuto1 .p {
+  width: 50%;
+}
+
+#kurahuto .kurahuto1 img {
+  max-width: 50%;
+  /* 画像の幅を親要素の50%までに制限 */
+  height: auto;
+  /* 高さを自動で調整 */
+}
+
+#kurahuto .kurahuto2 {
+  display: flex; /* 画像を横に並べるために flexbox を使用 */
+  justify-content: space-between; /* 画像間のスペースを均等に配置 */
+  margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
+  padding:20px;
+}
+
+#kurahuto .kurahuto2 img {
+  width: 30%; /* 各画像の幅を設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+/*バトルアクション*/
+#batoru .batoru1 {
+  display: flex;
+  padding:20px;
+} 
+#batoru .batoru1 .p {
+  width: 50%;
+}
+
+#batoru .batoru1 img {
+  max-width: 50%;
+  /* 画像の幅を親要素の50%までに制限 */
+  height: auto;
+  /* 高さを自動で調整 */
+}
+
+#batoru .batoru2 {
+  display: flex; /* 画像を横に並べるために flexbox を使用 */
+  justify-content: space-between; /* 画像間のスペースを均等に配置 */
+  margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
+  padding:20px;
+}
+
+#batoru .batoru2 img {
+  width: 30%; /* 各画像の幅を設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+/*キャラクター*/
+#chara .chara1 {
+  display: flex;
+  padding:20px;
+} 
+#chara .chara1 .p {
+  width: 50%;
+}
+
+#chara .chara1 img {
+  max-width: 50%;
+  /* 画像の幅を親要素の50%までに制限 */
+  height: auto;
+  /* 高さを自動で調整 */
+}
+
+#chara .chara2 {
+  display: flex; /* 画像を横に並べるために flexbox を使用 */
+  justify-content: space-between; /* 画像間のスペースを均等に配置 */
+  margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
+  padding:20px;
+}
+
+#chara .chara2 img {
+  width: 30%; /* 各画像の幅を設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+/*メインストーリー*/
+#story .story1 {
+  display: flex;
+  padding:20px;
+} 
+#story .story1 .p {
+  width: 50%;
+}
+
+#story .story1 img {
+  max-width: 50%;
+  /* 画像の幅を親要素の50%までに制限 */
+  height: auto;
+  /* 高さを自動で調整 */
+}
+
+#story .story2 {
+  display: flex; /* 画像を横に並べるために flexbox を使用 */
+  justify-content: space-between; /* 画像間のスペースを均等に配置 */
+  margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
+  padding:20px;
+}
+
+#story .story2 img {
+  width: 30%; /* 各画像の幅を設定 */
+  height: auto; /* 高さを自動調整 */
+}
+/*-------------------------------------------
+ページトップボタン
+-------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+.pagetop {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: #fff;
+  border: solid 2px #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.pagetop__arrow {
+  height: 10px;
+  width: 10px;
+  border-top: 3px solid #000;
+  border-right: 3px solid #000;
+  transform: translateY(20%) rotate(-45deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pagetop:hover, .pagetop:hover .pagetop__arrow {
+      border-color: #3293e7;
+  }
+}
 /*-------------------------------------------
 footer
 -------------------------------------------*/

@@ -5,7 +5,13 @@ html {
     color: #333;
     font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
   }
-
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  #btn {
+    display: none;
+  }
 
 /*-------------------------------------------
 header
@@ -45,6 +51,7 @@ header
     color: #fff;
     padding: 30px;
   }
+  
   
   /* 通常時は非表示 */
   .child_menu {
@@ -573,5 +580,56 @@ footer
  .footer04 .menu li:nth-child(odd) {
   border-right: 1px #ffffff solid;
  }
- }
+}
+/*-------------------------------------------
+SP版
+-------------------------------------------*/
 
+@media screen and (max-width: 750px) {
+  #btn {
+    position: fixed;
+    top: 0px;
+    right: 5px;
+    width: 44px;
+    height: 44px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+  }
+  #btn span {
+    display: block;
+    background-color: #333;
+    width: 36px;
+    height: 2px;
+    transi
+    tion: all 0.5s ease;
+  }
+  #btn.on span {
+    background-color: #fff;
+  }
+  #btn.on span:nth-of-type(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+  #btn.on span:nth-of-type(2) {
+    transform: scale(0);
+  }
+  #btn.on span:nth-of-type(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    top: -500px;
+  }
+  nav.on {
+    top: 0;
+  }
+  nav a {
+    margin: 15px auto;
+  }
+}

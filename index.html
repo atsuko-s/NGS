@@ -12,10 +12,20 @@
   <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/css/6-1-7.css">
 </head>
 <body>
+  <div id="btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <header>
     <div class="inner">
       <div class="logo"><img src="img/ngs_title.png" alt="PSO_NGS"></div>
-      <nav>
+      <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+      <button type="button" class="btn js-btn">
+        <span class="btn-line"></span>
+     </button>
+      <!-- メニュー -->
+      <nav id="navwrap">
         <ul class="menu">
           <li>
             <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
@@ -41,7 +51,12 @@
         </ul>
       </nav>
     </div>
-  </header>      
+    <label for="hamburger" class="c-hamburger-menu__button"><!-- 追記 ハンバーガーメニューのボタン -->
+      <span class="c-hamburger-menu__button-mark"></span>
+      <span class="c-hamburger-menu__button-mark"></span>
+      <span class="c-hamburger-menu__button-mark"></span>
+    </label>
+  </header>    
   <main>
     <ul class="slider">
       <li><a href="#sekaikann"><img src="img/wallpaper01_1980_1080_02のコピー.jpg" alt=""></a></li>
@@ -199,5 +214,6 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
+  <script src="ham.js"></script>
 </body>
 </html>

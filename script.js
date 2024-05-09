@@ -11,10 +11,14 @@ $('.slider').slick({
     dots: true, //下部ドットナビゲーションの表示
   });
   
-  const btn = document.getElementById("btn");
-  const menu = document.getElementById("menu");
+// ハンバーガーメニューのトグル
+document.getElementById('btn').addEventListener('click', function() {
+  document.querySelector('.menu').classList.toggle('active');
+});
 
-btn.addEventListener("click", () => {
-  btn.classList.toggle("on");
-  menu.classList.toggle("on");
+// メニュー項目をクリックした際にメニューを閉じる
+document.querySelectorAll('.menu a').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelector('.menu').classList.remove('active');
+  });
 });

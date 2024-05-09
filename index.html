@@ -12,20 +12,13 @@
   <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/css/6-1-7.css">
 </head>
 <body>
-  <div id="btn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <header>
+    <header>
     <div class="inner">
       <div class="logo"><img src="img/ngs_title.png" alt="PSO_NGS"></div>
-      <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
-      <button type="button" class="btn js-btn">
-        <span class="btn-line"></span>
-     </button>
       <!-- メニュー -->
-      <nav id="navwrap">
+      <input id="hanburger" type="checkbox">
+      <label for="hanburger" class="menu_button"></label>
+      <nav class="global_menu">
         <ul class="menu">
           <li>
             <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
@@ -51,12 +44,7 @@
         </ul>
       </nav>
     </div>
-    <label for="hamburger" class="c-hamburger-menu__button"><!-- 追記 ハンバーガーメニューのボタン -->
-      <span class="c-hamburger-menu__button-mark"></span>
-      <span class="c-hamburger-menu__button-mark"></span>
-      <span class="c-hamburger-menu__button-mark"></span>
-    </label>
-  </header>    
+    </header>    
   <main>
     <ul class="slider">
       <li><a href="#sekaikann"><img src="img/wallpaper01_1980_1080_02のコピー.jpg" alt=""></a></li>

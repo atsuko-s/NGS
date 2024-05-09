@@ -72,7 +72,7 @@ header
   .dropdown {
     position: relative;
   }
-  
+
   /* ナビゲーション下矢印部分 */
   .dropdown::after {
     content: '';
@@ -586,50 +586,73 @@ SP版
 -------------------------------------------*/
 
 @media screen and (max-width: 750px) {
-  #btn {
+  #hanburger {
+    display: none; /* チェックボックスを非表示 */
+  }
+   
+  .menu_button { /* ボタンのスタイル */
+    width: 50px; /* 幅 */
+    height: 50px; /* 高さ */
     position: fixed;
-    top: 0px;
-    right: 5px;
-    width: 44px;
-    height: 44px;
+    top: 20px;
+    right: 20px;
+    background: #db7093; /* 背景色 */
     z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    cursor: pointer;
   }
-  #btn span {
-    display: block;
-    background-color: #333;
-    width: 36px;
-    height: 2px;
-    transi
-    tion: all 0.5s ease;
+   
+  .menu_button::before { /* アイコンのスタイル */
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c9"; /* アイコン「３本線」 */
+    font-weight: 900;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
-  #btn.on span {
-    background-color: #fff;
+   
+  #hanburger:checked + .menu_button::before { /* アイコンのスタイル（チェック済み） */
+    content: "\f00d"; /* アイコン「×印」 */
   }
-  #btn.on span:nth-of-type(1) {
-    transform: translateY(11px) rotate(45deg);
-  }
-  #btn.on span:nth-of-type(2) {
-    transform: scale(0);
-  }
-  #btn.on span:nth-of-type(3) {
-    transform: translateY(-12px) rotate(-45deg);
-  }
-  nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    transition: all 0.5s ease;
-    top: -500px;
-  }
-  nav.on {
+   
+  .global_menu { /* メニュー全体のスタイル */
+    visibility: hidden; /* メニューを非表示 */
+    width: 100%;
+    height: 100%;
+    position: fixed;
     top: 0;
+    left: 0;
+    padding: 30px;
+    color: #333; /* 文字色 */
+    background: #ffc0cb; /* 背景色 */
+    overflow-y:  scroll;
+    text-align: center;
   }
-  nav a {
-    margin: 15px auto;
+   
+  #hanburger:checked ~ .global_menu { /* メニュー全体のスタイル（チェック済） */
+    visibility: visible; /* メニューを表示 */
+  }
+   
+  #global_menu a { /* 各項目のスタイル */
+    display: block;
+    width: 100%;
+  }
+   
+  .global_menu a:hover { /* 各項目のスタイル（ホバー時） */
+    background: #ffb6c1;
+  }
+   
+  .menu:not(:last-child) {
+    margin-bottom: 20px;
+  }
+   
+  .menu > a { /* 親項目のスタイル */
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+   
+  .child_menu > li > a {
+    padding: 10px 30px;
+    font-size: 0.8em;
   }
 }

@@ -35,22 +35,79 @@ header
     width: 250px;
   }
   
-  .menu {
+
+.hamburger {
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 900px;
     display: flex;
-  }
-  
-  .menu li {
-    position: relative;
-    list-style: none;
-  }
-  
-  .menu li a {
-    display: block;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    padding: 30px;
-  }
+    justify-content: space-between;
+}
+.hamburger .btn-gNav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 24px;
+  z-index: 12;
+  box-sizing: border-box;
+  cursor: pointer;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.hamburger .btn-gNav span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.hamburger .btn-gNav span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger .btn-gNav span:nth-child(2) {
+  top: 10px;
+}
+
+.hamburger .btn-gNav span:nth-child(3) {
+  top: 20px;
+}
+
+.hamburger .btn-gNav.open span:nth-child(1) {
+  background: #ffffff;
+  top: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.hamburger .btn-gNav.open span:nth-child(2),
+.hamburger .btn-gNav.open span:nth-child(3) {
+  top: 6px;
+  background: #ffffff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btn-gNav {
+  display: none;
+}
+
+.gNav .gNav-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gNav .gNav-menu li {
+  margin: 0 auto;
+  padding: 0 5px;
+}
   
   
   /* 通常時は非表示 */
@@ -208,168 +265,168 @@ margin:0 5px;
 }
 
 /*世界観*/
-#sekaikann .sekai1 {
+#world .world {
   display: flex;
   padding:20px;
 } 
-#sekaikann .sekai1 .p {
+#world .world .p {
   width: 50%;
 }
 
-#sekaikann .sekai1 img {
+#world .world img {
   max-width: 50%;
   /* 画像の幅を親要素の50%までに制限 */
   height: auto;
   /* 高さを自動で調整 */
 }
 
-#sekaikann .sekai2 {
+#world .world_gallery {
   display: flex; /* 画像を横に並べるために flexbox を使用 */
   justify-content: space-between; /* 画像間のスペースを均等に配置 */
   margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
   padding:20px;
 }
 
-#sekaikann .sekai2 img {
+#world .world_gallery img {
   width: 33%; /* 各画像の幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
 
 /*キャラクタークリエイト*/
-#kurieito .kurieito1 {
+#create .create {
   display: flex;
   padding:20px;
 } 
-#kurieito .kurieito1 .p {
+#create .create .p {
   width: 50%;
 }
-#kurieito .kurieito1 img {
+#create .create img {
   max-width: 50%;
   /* 画像の幅を親要素の50%までに制限 */
   height: auto;
   /* 高さを自動で調整 */
 }
 
-#kurieito .kurieito2 {
+#create .create_gallery {
   display: flex; /* 画像を横に並べるために flexbox を使用 */
   justify-content: space-between; /* 画像間のスペースを均等に配置 */
   margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
   padding:20px;
 }
 
-#kurieito .kurieito2 img {
+#create .create_gallery img {
   width: 33%; /* 各画像の幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
 
 /*クラフト*/
-#kurahuto .kurahuto1 {
+#craft .craft {
   display: flex;
   padding:20px;
 } 
-#kurahuto .kurahuto1 .p {
+#craft .craft .p {
   width: 50%;
 }
 
-#kurahuto .kurahuto1 img {
+#craft .craft img {
   max-width: 50%;
   /* 画像の幅を親要素の50%までに制限 */
   height: auto;
   /* 高さを自動で調整 */
 }
 
-#kurahuto .kurahuto2 {
+#craft .craft_gallery {
   display: flex; /* 画像を横に並べるために flexbox を使用 */
   justify-content: space-between; /* 画像間のスペースを均等に配置 */
   margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
   padding:20px;
 }
 
-#kurahuto .kurahuto2 img {
+#craft .craft_gallery img {
   width: 33%; /* 各画像の幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
 
 /*バトルアクション*/
-#batoru .batoru1 {
+#action .action {
   display: flex;
   padding:20px;
 } 
-#batoru .batoru1 .p {
+#action .action .p {
   width: 50%;
 }
 
-#batoru .batoru1 img {
+#action .action img {
   max-width: 50%;
   /* 画像の幅を親要素の50%までに制限 */
   height: auto;
   /* 高さを自動で調整 */
 }
 
-#batoru .batoru2 {
+#action .action_gallery {
   display: flex; /* 画像を横に並べるために flexbox を使用 */
   justify-content: space-between; /* 画像間のスペースを均等に配置 */
   margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
   padding:20px;
 }
 
-#batoru .batoru2 img {
+#action .action_gallery img {
   width: 33%; /* 各画像の幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
 
 /*キャラクター*/
-#chara .chara1 {
+#chara .chara {
   display: flex;
   padding:20px;
 } 
-#chara .chara1 .p {
+#chara .chara .p {
   width: 50%;
 }
 
-#chara .chara1 img {
+#chara .chara img {
   max-width: 50%;
   /* 画像の幅を親要素の50%までに制限 */
   height: auto;
   /* 高さを自動で調整 */
 }
 
-#chara .chara2 {
+#chara .chara_gallery {
   display: flex; /* 画像を横に並べるために flexbox を使用 */
   justify-content: space-between; /* 画像間のスペースを均等に配置 */
   margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
   padding:20px;
 }
 
-#chara .chara2 img {
+#chara .chara_gallery img {
   width: 33%; /* 各画像の幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
 
 /*メインストーリー*/
-#story .story1 {
+#story .story {
   display: flex;
   padding:20px;
 } 
-#story .story1 .p {
+#story .story .p {
   width: 50%;
 }
 
-#story .story1 img {
+#story .story img {
   max-width: 50%;
   /* 画像の幅を親要素の50%までに制限 */
   height: auto;
   /* 高さを自動で調整 */
 }
 
-#story .story2 {
+#story .story_gallery {
   display: flex; /* 画像を横に並べるために flexbox を使用 */
   justify-content: space-between; /* 画像間のスペースを均等に配置 */
   margin-top: 20px; /* 画像と前の段落の間にマージンを追加 */
   padding:20px;
 }
 
-#story .story2 img {
+#story .story_gallery img {
   width: 33%; /* 各画像の幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
@@ -532,155 +589,76 @@ footer
   background: #000000;
   text-align: center;
   padding: 30px;
- }
- .footer04 a {
+}
+.footer04 a {
   color: #808080;
   text-decoration: none;
- }
- .footer04 a:hover {
+}
+.footer04 a:hover {
   text-decoration: underline;
- }
- .footer04 .menu {
+}
+.footer04 .menu {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- }
+}
 
- .footer04 .menu img {
+.footer04 .menu img {
   height: auto;
   width: 80px;
- }
- 
- .footer04 .menu li {
+}
+
+.footer04 .menu li {
   margin: 0;
   padding: 0 20px;
   border-right: 1px #ffffff solid;
- }
- .footer04 .menu li:last-child {
+}
+.footer04 .menu li:last-child {
   border: none;
- }
- .footer04 .copyright {
+}
+.footer04 .copyright {
   margin: 0;
   padding: 20px 0 0 0;
- }
- 
- @media only screen and (max-width: 599px) {
- .footer04 .menu {
+}
+
+@media only screen and (max-width: 599px) {
+.footer04 .menu {
   justify-content: flex-start;
- }
- .footer04 .menu li {
+}
+.footer04 .menu li {
   width: 50%;
   box-sizing: border-box;
   border: none;
- }
- .footer04 .menu li:nth-child(odd) {
+}
+.footer04 .menu li:nth-child(odd) {
   border-right: 1px #ffffff solid;
- }
+}
 }
 /*-------------------------------------------
 SP版
 -------------------------------------------*/
 
 @media screen and (max-width: 750px) {
-  #hanburger {
-    display: none; /* チェックボックスを非表示 */
-  }
-   
-  .menu_button { /* ボタンのスタイル */
-    width: 50px; /* 幅 */
-    height: 50px; /* 高さ */
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #db7093; /* 背景色 */
-    z-index: 10;
-  }
-   
-  .menu_button::before { /* アイコンのスタイル */
-    font-family: "Font Awesome 5 Free";
-    content: "\f0c9"; /* アイコン「３本線」 */
-    font-weight: 900;
-    position: absolute;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-   
-  #hanburger:checked + .menu_button::before { /* アイコンのスタイル（チェック済み） */
-    content: "\f00d"; /* アイコン「×印」 */
-  }
-   
-  .global_menu { /* メニュー全体のスタイル */
-    visibility: hidden; /* メニューを非表示 */
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 30px;
-    color: #333; /* 文字色 */
-    background: #ffc0cb; /* 背景色 */
-    overflow-y:  scroll;
-    text-align: center;
-  }
-   
-  #hanburger:checked ~ .global_menu { /* メニュー全体のスタイル（チェック済） */
-    visibility: visible; /* メニューを表示 */
-  }
-   
-  .global_menu a { /* 各項目のスタイル */
-    display: block;
-    width: 100%;
-  }
-   
-  .global_menu a:hover { /* 各項目のスタイル（ホバー時） */
-    background: #ffb6c1;
-  }
-   
-  .menu:not(:last-child) {
-    margin-bottom: 20px;
-  }
-   
-  .menu > a { /* 親項目のスタイル */
-    font-weight: bold;
-    padding: 10px 20px;
-  }
-   
-  .child_menu > li > a {
-    padding: 10px 30px;
-    font-size: 0.8em;
-  }
-
-.wrapper {
-  width: 100%;
-  padding: 10px;
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
 /*-------------------------------------------
 世界観
 -------------------------------------------*/
-#sekaikann .sekai1 {
+#world .world {
   flex-direction: column;
 }
 
-#sekaikann .sekai1 img {
+#world .world img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#sekaikann .sekai2 {
+#world .world_gallery {
   display:flex;
 }
 
-#sekaikann .sekai2 img {
+#world .world_gallery img {
   width: 33%;
   margin-bottom: 10px;
 }
@@ -688,20 +666,20 @@ SP版
 /*-------------------------------------------
 キャラクタークリエイト
 -------------------------------------------*/
-#kurieito .kurieito1 {
+#create .create {
   flex-direction: column;
 }
 
-#kurieito .kurieito1 img {
+#create .create img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#kurieito .kurieito2 {
+#create .create_gallery {
   display:flex;
 }
 
-#kurieito .kurieito2 img {
+#create .create_gallery img {
   width: 33%;
   margin-bottom: 10px;
 }
@@ -709,20 +687,20 @@ SP版
 /*-------------------------------------------
 クラフト
 -------------------------------------------*/
-#kurahuto .kurahuto1 {
+#craft .craft {
   flex-direction: column;
 }
 
-#kurahuto .kurahuto1 img {
+#craft .craft img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#kurahuto .kurahuto2 {
+#craft .craft_gallery {
   display:flex;
 }
 
-#kurahuto .kurahuto2 img {
+#craft .craft_gallery img {
   width: 33%;
   margin-bottom: 10px;
 }
@@ -730,20 +708,20 @@ SP版
 /*-------------------------------------------
 バトルアクション
 -------------------------------------------*/
-#batoru .batoru1 {
+#action .action {
   flex-direction: column;
 }
 
-#batoru .batoru1 img {
+#action .action img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#batoru .batoru2 {
+#atoaction .action_gallery {
   display:flex;
 }
 
-#kurahuto .kurahuto2 img {
+#action .action_gallery img {
   width: 33%;
   margin-bottom: 10px;
 }
@@ -751,41 +729,41 @@ SP版
 /*-------------------------------------------
 キャラクター
 -------------------------------------------*/
-#chara .chara1 {
+#chara .chara {
   flex-direction: column;
 }
 
-#chara .chara1 img {
+#chara .chara img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#chara .chara2 {
+#chara .chara_gallery {
   display:flex;
 }
 
-#chara .chara2 img {
+#chara .chara_gallery img {
   width: 33%;
   margin-bottom: 10px;
 }
 
 /*-------------------------------------------
-メインストリーリー
+メインストーリー
 -------------------------------------------*/
-#story .story1 {
+#story .story {
   flex-direction: column;
 }
 
-#story .story1 img {
+#story .story img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#story .story2 {
+#story .story_gallery {
   display:flex;
 }
 
-#story .story2 img {
+#story .story_gallery img {
   width: 33%;
   margin-bottom: 10px;
 }

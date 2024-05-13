@@ -5,38 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PSO2_NGS</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
   <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/css/6-1-7.css">
-</head>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script></head>
 <body>
     <header>
-    <div class="inner">
-      <div class="logo"><img src="img/ngs_title.png" alt="PSO_NGS"></div>
-      <!-- メニュー -->
-      <input id="hanburger" type="checkbox">
-      <label for="hanburger" class="menu_button"></label>
-      <nav class="global_menu">
-        <ul class="menu">
+      <nav>
+        <ul id="menu">
+          <div class="menu-left"><img src="img/ngs_title.png" alt="PSO_NGS"></div>
           <li>
-            <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
-            <a class="dropdown child" href="">ニュース</a>
-            <!-- ドロップダウンメニューはここから -->
-            <ul class="dropdown_menu child_menu">
-              <li><a href="#news">ニュース</a></li>
+            <a href="/service/">サービス</a>
+            <input type="checkbox" id="menu-parent01"/>
+            <label for="menu-parent01">
+            <span class="pd"><i class="fas angletoggle"></i></span>
+            </label>
+            <ul>
+              <li>
+                <a href="#news">ニュース</a>
+              </li>
             </ul>
           </li>
-          <li>
-            <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
-            <a class="dropdown child" href="">ゲーム概要</a>
-            <!-- ドロップダウンメニューはここから -->
+        </ul>  
+        <li>
+          <a href="/service/">ゲーム概要</a>
+          <input type="checkbox" id="menu-parent01"/>
+          <label for="menu-parent01">
+            <span class="pd"><i class="fas angletoggle"></i></span>
+          </label>
+          <ul>
+            <li><a href="#world">世界観</a></li>
+              <li><a href="#create">キャラクタークリエイト</a></li>
+              <li><a href="#craft">クラフト</a></li>
+              <li><a href="#action">バトルアクション</a></li>
+              <li><a href="#chara">キャラクター</a></li>
+              <li><a href="#story">メインストーリー</a></li>
+          </ul>
+        </li>
+      </nav>  
+      <!-- メニュー -->
+      
             <ul class="dropdown_menu child_menu">
-              <li><a href="#sekaikann">世界観</a></li>
-              <li><a href="#kurieito">キャラクタークリエイト</a></li>
-              <li><a href="#kurahuto">クラフト</a></li>
-              <li><a href="#batoru">バトルアクション</a></li>
+              <li><a href="#world">世界観</a></li>
+              <li><a href="#create">キャラクタークリエイト</a></li>
+              <li><a href="#craft">クラフト</a></li>
+              <li><a href="#action">バトルアクション</a></li>
               <li><a href="#chara">キャラクター</a></li>
               <li><a href="#story">メインストーリー</a></li>
             </ul>
@@ -47,75 +62,75 @@
     </header>    
   <main>
     <ul class="slider">
-      <li><a href="#sekaikann"><img src="img/wallpaper01_1980_1080_02のコピー.jpg" alt=""></a></li>
-      <li><a href="#kurieito"><img src="img/pso20210830_191756_000のコピー.jpg" alt=""></a></li>
-      <li><a href="#kurahuto"><img src="img/pso20240407_234216_000のコピー.jpg" alt=""></a></li>
-      <li><a href="#batoru"><img src="img/pso20240424_234559_002 - コピー.jpg" alt=""></a></li>
+      <li><a href="#world"><img src="img/wallpaper01_1980_1080_02のコピー.jpg" alt=""></a></li>
+      <li><a href="#create"><img src="img/pso20210830_191756_000のコピー.jpg" alt=""></a></li>
+      <li><a href="#craft"><img src="img/pso20240407_234216_000のコピー.jpg" alt=""></a></li>
+      <li><a href="#action"><img src="img/pso20240424_234559_002 - コピー.jpg" alt=""></a></li>
       <li><a href="#chara"><img src="img/pso20220109_043641_004 - コピー.jpg" alt=""></a></li>
       <li><a href="#story"><img src="img/pso20240409_233524_001のコピー.jpg" alt=""></a></li>
     </ul>
     <!--/slider-->
-    <section id="sekaikann" class="wrapper">
-      <h2 class="section-title">世界観</h2>
-      <div class="sekai1">
+    <section id="world" class="wrapper">
+      <h1 class="section-title">世界観</h1>
+      <div class="world">
         <img src="img/wallpaper01_1980_1080_02.jpg" alt="">
         <p>惑星ハルファに宇宙から降下ポッドで降り立つ人々を「星渡り」と呼ぶ<br>
           星渡りの一人である「主人公」。<br>
           惑星ハルファには草原や砂漠、凍土などさまざまな地域が存在する。</p>
       </div>
-      <div class="sekai2">
+      <div class="world_gallery">
         <img src="img/wallpaper01_1980_1080_03.jpg" alt="">
         <img src="img/wallpaper01_1980_1080_04.jpg" alt="">
         <img src="img/wallpaper01_1980_1080_05.jpg" alt="">
       </div>
     </section>
-    <section id="kurieito" class="wrapper">
-      <h2 class="section-title">キャラクタークリエイト</h2>
-      <div class="kurieito1">
+    <section id="create" class="wrapper">
+      <h1 class="section-title">キャラクタークリエイト</h1>
+      <div class="create">
         <img src="img/pso20210830_191756_000.jpg" alt="">
         <p>キャラクター作りが非常に細かく設定できる<br>
           表情や走り方までカスタマイズ可能！</p>
       </div>
-      <div class="kurieito2">
+      <div class="create_gallery">
         <img src="img/pso20210928_223723_033.jpg" alt="">
         <img src="img/pso20210921_190000_012.jpg" alt="">
         <img src="img/pso20211022_161023_005.jpg" alt="">
       </div>
     </section>
-    <section id="kurahuto" class="wrapper">
-      <h2 class="section-title">クラフト</h2>
-      <div class="kurahuto1">
+    <section id="craft" class="wrapper">
+      <h1 class="section-title">クラフト</h1>
+      <div class="craft">
         <img src="img/pso20240407_234216_000.jpg" alt="">
         <p>「クリエィティブベース」と呼ばれる専用のフィールドに建材や装飾品などを自由に配置できる<br>
           自分だけのオリジナル空間を作成して楽しめる</p>
       </div>
-      <div class="kurahuto2">
+      <div class="craft_gallery">
         <img src="img/pso20240402_230608_000.jpg" alt="">
         <img src="img/pso20240402_230705_001.jpg" alt="">
         <img src="img/pso20240425_231839_000.jpg" alt="">
       </div>
     </section>
-    <section id="batoru" class="wrapper">
-      <h2 class="section-title">バトルアクション</h2>
-      <div class="batoru1">
+    <section id="action" class="wrapper">
+      <h1 class="section-title">バトルアクション</h1>
+      <div class="action">
         <img src="img/pso20240424_234559_002.jpg" alt="">
         <p>「ジャンプやダッシュ、グラインドなど操作し広大なMAPを駆け巡りながらエネミーと戦う<br>
           さまざまなクラスや武器を選べられるので自分好みのスタイルでバトルアクションを楽しもう！</p>
       </div>
-      <div class="batoru2">
+      <div class="action_gallery">
         <img src="img/pso20220202_195244_008.jpg" alt="">
         <img src="img/pso20211020_091540_000.jpg" alt="">
         <img src="img/pso20240322_234415_000.jpg" alt="">
       </div>
     </section>
-     <section id="chara" class="wrapper">
-      <h2 class="section-title">キャラクター</h2>
-      <div class="chara1">
+    <section id="chara" class="wrapper">
+      <h1 class="section-title">キャラクター</h1>
+      <div class="chara">
         <img src="img/twitter_icon01.jpg" alt="">
         <p>惑星ハルファを冒険している道中で個性豊かな「アークス」たちとの出会いが！<br>
           さまざまなクエストをクリアし仲間たちとの絆を深めていく</p>
       </div>
-      <div class="chara2">
+      <div class="chara_gallery">
         <img src="img/twitter_icon04.jpg" alt="">
         <img src="img/twitter_icon05.jpg" alt="">
         <img src="img/twitter_icon06.jpg" alt="">
@@ -123,21 +138,21 @@
     </section>
   </section>
   <section id="story" class="wrapper">
-   <h2 class="section-title">メインストーリー</h2>
-   <div class="story1">
-     <img src="img/pso20240409_233524_001.jpg" alt="">
-     <p>ストーリーを進めることで新要素の開放ができる<br>
-       惑星ハルファの秘密を暴いていこう！</p>
-   </div>
-   <div class="story2">
-     <img src="img/pso20240409_233532_002.jpg" alt="">
-     <img src="img/pso20240409_233343_000.jpg" alt="">
-     <img src="img/pso20240326_230410_002.jpg" alt="">
-   </div>
- </section>
- <section id="news" class="news">
+    <h1 class="section-title">メインストーリー</h1>
+      <div class="story">
+      <img src="img/pso20240409_233524_001.jpg" alt="">
+      <p>ストーリーを進めることで新要素の開放ができる<br>
+      惑星ハルファの秘密を暴いていこう！</p>
+      </div>
+      <div class="story_gallery">
+        <img src="img/pso20240409_233532_002.jpg" alt="">
+        <img src="img/pso20240409_233343_000.jpg" alt="">
+        <img src="img/pso20240326_230410_002.jpg" alt="">
+      </div>
+  </section>
+  <section id="news" class="news">
   <div class="inner2">
-    <h2 class="sub_ttl">NEWS</h2>
+    <h1 class="sub_ttl">NEWS</h1>
 
 <!-- ここからニュース記事 -->
 
@@ -177,8 +192,7 @@
 
   </div>
 </section>
-</section>
- <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+<a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
   </main>
 
   <footer>

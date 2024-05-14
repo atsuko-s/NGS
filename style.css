@@ -6,6 +6,7 @@ html {
     font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
   }
   img {
+    width: 100%;
     max-width: 100%;
     height: auto;
   }
@@ -13,163 +14,102 @@ html {
     display: none;
   }
 
-/*-------------------------------------------
-header
--------------------------------------------*/
-  
-  header {
-    background-color: #969da3;
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
   
-  .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-  }
-  
-  .logo img {
-    width: 250px;
-  }
-  
-
-.hamburger {
-    margin: 20px auto 0;
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    justify-content: space-between;
-}
-.hamburger .btn-gNav {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 24px;
-  z-index: 12;
-  box-sizing: border-box;
-  cursor: pointer;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
+header {
+  background-color: #1b63a7;
 }
 
-.hamburger .btn-gNav span {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background: #ffffff;
-  border-radius: 10px;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-
-.hamburger .btn-gNav span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger .btn-gNav span:nth-child(2) {
-  top: 10px;
-}
-
-.hamburger .btn-gNav span:nth-child(3) {
-  top: 20px;
-}
-
-.hamburger .btn-gNav.open span:nth-child(1) {
-  background: #ffffff;
-  top: 6px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.hamburger .btn-gNav.open span:nth-child(2),
-.hamburger .btn-gNav.open span:nth-child(3) {
-  top: 6px;
-  background: #ffffff;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.btn-gNav {
-  display: none;
-}
-
-.gNav .gNav-menu {
+.inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
 }
 
-.gNav .gNav-menu li {
-  margin: 0 auto;
-  padding: 0 5px;
+.logo img {
+  width: 250px;
 }
-  
-  
-  /* 通常時は非表示 */
-  .child_menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #969da3;
-    /* ドロップダウンメニューを透明化 */
-    opacity: 0;
-    /* 透明化だけではクリックできてしまうので以下も追記 */
-    visibility: hidden;
-    /* フェードで表示非表示される時間の指定 */
-    transition: all 1s;
-    width: 100%;
-    z-index: 99;
-  }
-  
-  .dropdown {
-    position: relative;
-  }
 
-  /* ナビゲーション下矢印部分 */
-  .dropdown::after {
-    content: '';
-    position: absolute;
-    top: 43%;
-    right: 10px;
-    transform: rotate(135deg);
-    width: 5px;
-    height: 5px;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
-  }
-  
-  .dropdown:hover+.dropdown_menu,
-  .dropdown_menu:hover {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .child_menu li {
-    padding: 0;
-  }
-  
-  .child_menu li a {
-    display: block;
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #444;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  .child_menu li a:hover {
-    background-color: #acacac;
-  }
+.menu {
+  display: flex;
+}
 
-  #hanburger {
-    display: none;
-  }
+.menu li {
+  position: relative;
+  list-style: none;
+}
+
+.menu li a {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  padding: 30px;
+}
+
+/* 通常時は非表示 */
+.child_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: all 1s;
+  background-color: #1b63a7;
+  display: none;
+  width: 100%;
+  z-index: 99;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* ナビゲーション下矢印部分 */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 43%;
+  right: 10px;
+  transform: rotate(135deg);
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  z-index: 99;
+}
+
+/* dropdownクラスhoverしたら隣接要素のdropdown_menuクラスを表示 */
+.dropdown:hover+.dropdown_menu,
+.dropdown_menu:hover {
+  display: block;
+}
+
+.child_menu li {
+  padding: 0;
+}
+
+.child_menu li a {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #444;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 99;
+}
+
+.child_menu li a:hover {
+  background-color: #acacac;
+}
 /*-------------------------------------------
 main
 -------------------------------------------*/
@@ -248,7 +188,6 @@ margin:0 5px;
 
 .wrapper {
   /*コンテンツ幅を設定するための共通クラス*/
-  width: 1000px;
   margin: 0 auto;
   background-color: #cddbe6;
   color: #333;
@@ -641,38 +580,52 @@ footer
 SP版
 -------------------------------------------*/
 
+/* 750px以下の画面幅でレイアウトを調整 */
 @media screen and (max-width: 750px) {
-/*-------------------------------------------
-世界観
--------------------------------------------*/
-#world .world {
-  flex-direction: column;
-}
+  .section-title {
+    font-size: 2rem	;
+  }
 
-#world .world img {
-  max-width: 100%;
-  margin-bottom: 10px;
-}
+  #world .world {
+    flex-direction: column; /* フレックスボックスの方向を縦に変更 */
+    align-items: center; /* 子要素を中央に配置 */
+    text-align: center; /* テキストを中央に配置 */
+  }
 
-#world .world_gallery {
-  display:flex;
-}
+  #world .world p {
+    width: 100%; /* テキストの幅を100%に設定 */
+  }
 
-#world .world_gallery img {
-  width: 33%;
-  margin-bottom: 10px;
-}
+  #world .world img {
+    max-width: 100%; /* 画像の幅を親要素の100%までに制限 */
+    margin-bottom: 20px; /* 画像の下にマージンを追加 */
+  }
+
+  #world .world_gallery {
+    flex-direction: column; /* フレックスボックスの方向を縦に変更 */
+    align-items: center; /* 子要素を中央に配置 */
+  }
+
+  #world .world_gallery img {
+    width: 100%; /* 各画像の幅を100%に設定 */
+    margin-bottom: 20px; /* 各画像の下にマージンを追加 */
+  }
+
 
 /*-------------------------------------------
 キャラクタークリエイト
 -------------------------------------------*/
-#create .create {
+#craft .craft {
   flex-direction: column;
 }
 
+#create .create p {
+  width: 100%; /* テキストの幅を100%に設定 */
+}
+
 #create .create img {
-  max-width: 100%;
-  margin-bottom: 10px;
+  max-width: 100%; /* 画像の幅を親要素の100%までに制限 */
+  margin-bottom: 20px; /* 画像の下にマージンを追加 */
 }
 
 #create .create_gallery {
@@ -717,7 +670,7 @@ SP版
   margin-bottom: 10px;
 }
 
-#atoaction .action_gallery {
+#action .action_gallery {
   display:flex;
 }
 

@@ -188,6 +188,7 @@ margin:0 5px;
 
 .wrapper {
   /*コンテンツ幅を設定するための共通クラス*/
+  width: 1000px;
   margin: 0 auto;
   background-color: #cddbe6;
   color: #333;
@@ -579,44 +580,51 @@ footer
 /*-------------------------------------------
 SP版
 -------------------------------------------*/
-
 /* 750px以下の画面幅でレイアウトを調整 */
 @media screen and (max-width: 750px) {
-  .section-title {
-    font-size: 2rem	;
-  }
+.wrapper {
+  width: 100%; /* コンテンツ幅を100%に設定 */
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-  #world .world {
-    flex-direction: column; /* フレックスボックスの方向を縦に変更 */
-    align-items: center; /* 子要素を中央に配置 */
-    text-align: center; /* テキストを中央に配置 */
-  }
+.section-title {
+  font-size: 2rem; /* フォントサイズを少し小さく */
+}
 
-  #world .world p {
-    width: 100%; /* テキストの幅を100%に設定 */
-  }
+#world .world {
+  flex-direction: column; /* フレックスボックスの方向を縦に変更 */
+  align-items: center; /* 子要素を中央に配置 */
+  text-align: center; /* テキストを中央に配置 */
+  padding: 10px; /* パディングを調整 */
+}
 
-  #world .world img {
-    max-width: 100%; /* 画像の幅を親要素の100%までに制限 */
-    margin-bottom: 20px; /* 画像の下にマージンを追加 */
-  }
+#world .world p {
+  width: 100%; /* テキストの幅を100%に設定 */
+}
 
-  #world .world_gallery {
-    flex-direction: column; /* フレックスボックスの方向を縦に変更 */
-    align-items: center; /* 子要素を中央に配置 */
-  }
+#world .world img {
+  max-width: 100%; /* 画像の幅を親要素の100%までに制限 */
+  margin-bottom: 20px; /* 画像の下にマージンを追加 */
+}
 
-  #world .world_gallery img {
-    width: 100%; /* 各画像の幅を100%に設定 */
-    margin-bottom: 20px; /* 各画像の下にマージンを追加 */
-  }
+#world .world_gallery {
+  display:flex;
+}
 
+#world .world_gallery img {
+  width: 33%; /
+  margin-bottom: 20px; /* 各画像の下にマージンを追加 */
+}
 
 /*-------------------------------------------
 キャラクタークリエイト
 -------------------------------------------*/
-#craft .craft {
-  flex-direction: column;
+#create .create {
+  flex-direction: column; /* フレックスボックスの方向を縦に変更 */
+  align-items: center; /* 子要素を中央に配置 */
+  text-align: center; /* テキストを中央に配置 */
+  padding: 10px; /* パディングを調整 */
 }
 
 #create .create p {
@@ -633,20 +641,27 @@ SP版
 }
 
 #create .create_gallery img {
-  width: 33%;
-  margin-bottom: 10px;
+  width: 33%; /
+  margin-bottom: 20px; /* 各画像の下にマージンを追加 */
 }
 
 /*-------------------------------------------
 クラフト
 -------------------------------------------*/
 #craft .craft {
-  flex-direction: column;
+  flex-direction: column; /* フレックスボックスの方向を縦に変更 */
+  align-items: center; /* 子要素を中央に配置 */
+  text-align: center; /* テキストを中央に配置 */
+  padding: 10px; /* パディングを調整 */
+}
+
+#craft .craft p {
+  width: 100%; /* テキストの幅を100%に設定 */
 }
 
 #craft .craft img {
-  max-width: 100%;
-  margin-bottom: 10px;
+  max-width: 100%; /* 画像の幅を親要素の100%までに制限 */
+  margin-bottom: 20px; /* 画像の下にマージンを追加 */
 }
 
 #craft .craft_gallery {
@@ -654,8 +669,8 @@ SP版
 }
 
 #craft .craft_gallery img {
-  width: 33%;
-  margin-bottom: 10px;
+  width: 33%; /
+  margin-bottom: 20px; /* 各画像の下にマージンを追加 */
 }
 
 /*-------------------------------------------

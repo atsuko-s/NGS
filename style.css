@@ -23,93 +23,209 @@ html {
 /*-------------------------------------------
 header
 -------------------------------------------*/
-  
-header {
-  background-color: #1b63a7;
+.Nav {
+  margin-top: 60px;
+  border-top: solid 1px #F5F4F0;
+  border-bottom: solid 1px #F5F4F0;
 }
-
-.inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 60px;
+@media screen and (max-width: 1000px) {
+  .Nav {
+    position: relative;
+  border-top:none;
+  }
 }
-
-.logo img {
-  width: 250px;
-}
-
-.menu {
-  display: flex;
-}
-
-.menu li {
-  position: relative;
-  list-style: none;
-}
-
-.menu li a {
-  display: block;
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
-  padding: 30px;
-}
-
-/* 通常時は非表示 */
-.child_menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  transition: all 1s;
-  background-color: #1b63a7;
+.Nav .navbtn {
   display: none;
-  width: 100%;
-  z-index: 99;
 }
-
-.dropdown {
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn {
+    display: block;
+    position: absolute;
+    top: -60px;
+    right: 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn a,
+  .Nav .navbtn a.close {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+  }
+  .Nav .navbtn a::before,
+  .Nav .navbtn a.close::before {
+    position: absolute;
+    top:10px;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+   transition: .2s;
+  }
+  .Nav .navbtn a.open::before {
+    top:19px;
+    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  }
+  .Nav .navbtn a::after,
+  .Nav .navbtn a.close::after {
+    position: absolute;
+    bottom:10px;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+    transition: .2s;
+  }
+  .Nav .navbtn a.open::after {
+    bottom:18px;
+    transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn a.open {
+  }
+}
+ 
+@media screen and (max-width: 1000px) {
+  .Nav .navbtn a span {
+    display: block;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  .Nav .navbtn a span::after,
+  .Nav .navbtn a.close span::after {
+    position: absolute;
+    top:18px;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+  }
+  .Nav .navbtn a.open span::after {
+    display: none;
+  }
+}
+.Nav ul.close {
+  display: none;
+  border-top: solid 1px #F5F4F0;
+}
+.Nav > ul {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    background-color: #FFF;
+  }
+}
+.Nav > ul > li {
   position: relative;
+  font-size: 15px;
+  display: inline-block;
 }
-
-/* ナビゲーション下矢印部分 */
-.dropdown::after {
-  content: '';
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li {
+    display: block;
+    border-bottom: solid 1px #dddddd;
+  }
+}
+.Nav > ul > li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 19px 15px;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  z-index: 2;
+}
+.Nav > ul > li.parent > a {
+  padding-right:25px;
+}
+.Nav > ul > li.parent > a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    margin: -6px 0 0 0;
+    border-top: solid 2px #00a0e9;
+    border-right: solid 2px #00a0e9;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+@media screen and (max-width: 1000px) {
+.Nav > ul > li.parent.open > a::before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li.parent.open {
+    border-bottom: none;
+  }
+}
+  .Nav > ul > li.parent.open > a{
+    color: #FFF;
+  }
+  .Nav > ul > li.parent.open > a::after {
+  background: #333;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+@media screen and (max-width: 1000px) {
+  .Nav > ul > li.parent.open > a {
+    color: #FFF;
+  }
+}
+ 
+.Nav > ul > li a:hover {
+  color: #fff;
+}
+.Nav > ul > li a::after {
   position: absolute;
-  top: 43%;
-  right: 10px;
-  transform: rotate(135deg);
-  width: 5px;
-  height: 5px;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-  z-index: 99;
-}
-
-/* dropdownクラスhoverしたら隣接要素のdropdown_menuクラスを表示 */
-.dropdown:hover+.dropdown_menu,
-.dropdown_menu:hover {
+  z-index: -1;
   display: block;
+  content: '';
+}
+.Nav > ul > li a,
+.Nav > ul > li a::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.Nav > ul > li a::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+}
+.Nav > ul > li a:hover::after {
+  background: #333;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
-.child_menu li {
-  padding: 0;
-}
-
-.child_menu li a {
-  display: block;
-  text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #444;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  z-index: 99;
-}
-
-.child_menu li a:hover {
-  background-color: #acacac;
-}
 /*-------------------------------------------
 main
 -------------------------------------------*/

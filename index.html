@@ -9,40 +9,30 @@
   <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/css/6-1-7.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script type="text/javascript" src="script.js"></script></head>
-<body>
-    <header>
-      <div class="inner">
-        <div class="logo"><img src="img\ngs_title.png" alt="PSO_NGS"></div>
-        <nav>
-          <ul class="menu">
-            <li>
-              <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
-              <a class="dropdown child" href="">ニュース</a>
-              <!-- ドロップダウンメニューはここから -->
-              <ul class="dropdown_menu child_menu">
-                <li><a href="">ニュース</a></li>
-                <!-- 以下省略 -->
-              </ul>
-            </li>
-            <li>
-              <!-- dropdownクラスhoverでドロップダウンメニュー表示 -->
-              <a class="dropdown child" href="">ゲーム概要</a>
-              <!-- ドロップダウンメニューはここから -->
-              <ul class="dropdown_menu child_menu">
-                <li><a href="#create">キャラクタークリエイト</a></li>
-                  <li><a href="#craft">クラフト</a></li>
-                  <li><a href="#action">バトルアクション</a></li>
-                  <li><a href="#chara">キャラクター</a></li>
-                  <li><a href="#story">メインストーリー</a></li>
-                <!-- 以下省略 -->
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>    
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+  <body>
+  <header>
+    <nav class="Nav" role="navigation" aria-label="メインメニュー">
+      <img src="img/ngs_title.png" alt="PSO_NGS">
+      <p class="navbtn"><a href="javascript:void(0)"><span>メニューを開く</span></a></p>
+      <ul>
+        <li class="parent"><a href="javascript:void(0)">ニュース</a>
+      <ul class="submenu">
+        <li><a href="#news">ニュース</a></li>
+      </ul>
+        <li class="parent"><a href="javascript:void(0)">ゲーム概要</a>
+      <ul class="submenu">
+        <li><a href="#create">キャラクタークリエイト</a></li>
+        <li><a href="#craft">クラフト</a></li>
+        <li><a href="#action">バトルアクション</a></li>
+        <li><a href="#chara">キャラクター</a></li>
+        <li><a href="#story">メインストーリー</a></li>
+
+      </ul>
+      <!-- /.Nav --></nav>
+
+  </header>
   <main>
     <ul class="slider">
       <li><a href="#world"><img src="img/wallpaper01_1980_1080_02のコピー.jpg" alt=""></a></li>
@@ -177,7 +167,15 @@
 </section>
 <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
   </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://codingmania.net/demo/Tool/0046/js/main.js"></script>
 
+  <script src="script.js"></script>
   <footer>
     <div class="footer04">
       <ul class="menu">
@@ -196,9 +194,6 @@
   </footer>
   
   <!-- Other content here -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
-  <script src="ham.js"></script>
+  
 </body>
 </html>

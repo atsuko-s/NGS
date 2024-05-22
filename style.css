@@ -27,16 +27,28 @@ header
   margin-top: 60px;
   border-top: solid 1px #F5F4F0;
   border-bottom: solid 1px #F5F4F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 0 60px;
 }
+
+.Nav img {
+  width: auto;
+  height: auto;
+}
+
 @media screen and (max-width: 1000px) {
   .Nav {
     position: relative;
-  border-top:none;
+    border-top: none;
   }
 }
+
 .Nav .navbtn {
   display: none;
 }
+
 @media screen and (max-width: 1000px) {
   .Nav .navbtn {
     display: block;
@@ -45,6 +57,7 @@ header
     right: 10px;
   }
 }
+
 @media screen and (max-width: 1000px) {
   .Nav .navbtn a,
   .Nav .navbtn a.close {
@@ -57,41 +70,42 @@ header
   .Nav .navbtn a::before,
   .Nav .navbtn a.close::before {
     position: absolute;
-    top:10px;
-    left:10px;
-    content:"";
+    top: 10px;
+    left: 10px;
+    content: "";
     width: 20px;
     height: 3px;
     background-color: #FFF;
-   transition: .2s;
+    transition: .2s;
   }
   .Nav .navbtn a.open::before {
-    top:19px;
+    top: 19px;
     transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
   }
   .Nav .navbtn a::after,
   .Nav .navbtn a.close::after {
     position: absolute;
-    bottom:10px;
-    left:10px;
-    content:"";
+    bottom: 10px;
+    left: 10px;
+    content: "";
     width: 20px;
     height: 3px;
     background-color: #FFF;
     transition: .2s;
   }
   .Nav .navbtn a.open::after {
-    bottom:18px;
+    bottom: 18px;
     transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
   }
 }
+
 @media screen and (max-width: 1000px) {
   .Nav .navbtn a.open {
   }
 }
- 
+
 @media screen and (max-width: 1000px) {
   .Nav .navbtn a span {
     display: block;
@@ -102,25 +116,28 @@ header
   .Nav .navbtn a span::after,
   .Nav .navbtn a.close span::after {
     position: absolute;
-    top:18px;
-    left:10px;
-    content:"";
+    top: 18px;
+    left: 10px;
+    content: "";
     width: 20px;
     height: 3px;
-    background-color: #FFF;
+    background-color: #ffffff;
   }
   .Nav .navbtn a.open span::after {
     display: none;
   }
 }
+
 .Nav ul.close {
   display: none;
   border-top: solid 1px #F5F4F0;
 }
+
 .Nav > ul {
   margin: 0 auto;
   max-width: 1000px;
 }
+
 @media screen and (max-width: 1000px) {
   .Nav > ul {
     display: none;
@@ -132,17 +149,20 @@ header
     background-color: #FFF;
   }
 }
+
 .Nav > ul > li {
   position: relative;
   font-size: 15px;
   display: inline-block;
 }
+
 @media screen and (max-width: 1000px) {
   .Nav > ul > li {
     display: block;
     border-bottom: solid 1px #dddddd;
   }
 }
+
 .Nav > ul > li a {
   display: block;
   position: relative;
@@ -151,59 +171,68 @@ header
   font-size: 15px;
   color: #333;
   background-color: #fff;
-  z-index: 2;
+  z-index: 99;
 }
+
 .Nav > ul > li.parent > a {
-  padding-right:25px;
+  padding-right: 25px;
 }
+
 .Nav > ul > li.parent > a::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    width: 6px;
-    height: 6px;
-    margin: -6px 0 0 0;
-    border-top: solid 2px #00a0e9;
-    border-right: solid 2px #00a0e9;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  margin: -6px 0 0 0;
+  border-top: solid 2px #00a0e9;
+  border-right: solid 2px #00a0e9;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
 }
+
 @media screen and (max-width: 1000px) {
-.Nav > ul > li.parent.open > a::before {
+  .Nav > ul > li.parent.open > a::before {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+  }
 }
-}
+
 @media screen and (max-width: 1000px) {
   .Nav > ul > li.parent.open {
     border-bottom: none;
   }
 }
-  .Nav > ul > li.parent.open > a{
-    color: #FFF;
-  }
-  .Nav > ul > li.parent.open > a::after {
+
+.Nav > ul > li.parent.open > a {
+  color: #FFF;
+}
+
+.Nav > ul > li.parent.open > a::after {
   background: #333;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
+
 @media screen and (max-width: 1000px) {
   .Nav > ul > li.parent.open > a {
     color: #FFF;
   }
 }
- 
+
 .Nav > ul > li a:hover {
   color: #fff;
 }
+
 .Nav > ul > li a::after {
   position: absolute;
   z-index: -1;
   display: block;
   content: '';
 }
+
 .Nav > ul > li a,
 .Nav > ul > li a::after {
   -webkit-box-sizing: border-box;
@@ -212,6 +241,7 @@ header
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+
 .Nav > ul > li a::after {
   top: 0;
   left: 0;
@@ -220,11 +250,46 @@ header
   -webkit-transform: scale(.5);
   transform: scale(.5);
 }
+
 .Nav > ul > li a:hover::after {
   background: #333;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
+
+/* New CSS for submenu positioning */
+.Nav > ul > li ul.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Set a higher z-index value */
+  min-width: 100%; /* Match the width of the parent item */
+}
+
+.Nav > ul > li ul.submenu li {
+  display: block;
+}
+
+.Nav > ul > li ul.submenu li a {
+  padding: 10px;
+  color: #333;
+  background-color: #FFF;
+  white-space: nowrap;
+}
+
+.Nav > ul > li ul.submenu li a:hover {
+  background-color: #000; /* Change the background color to black */
+  color: #FFF; /* Change the text color to white */
+}
+
+/* Show submenu on hover */
+.Nav > ul > li:hover > ul.submenu {
+  display: block;
+}
+
 
 /*-------------------------------------------
 main

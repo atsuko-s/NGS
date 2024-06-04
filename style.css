@@ -154,6 +154,7 @@ header
   position: relative;
   font-size: 15px;
   display: inline-block;
+  z-index: 99;
 }
 
 @media screen and (max-width: 1000px) {

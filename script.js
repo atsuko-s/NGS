@@ -22,19 +22,21 @@ $(window).on('load orientationchange', function() {
     var w = window.innerWidth;
     var point = 1000;
     if (w > point) {
-      //それ以外のときの処理
+      // PC版の処理
       $("body").addClass("pc").removeClass("spn");
       $(".Nav > ul").removeClass("open close").css("display", "block");
       $(".Nav .navbtn a").removeClass("open close").html("<span>メニューを閉じる</span>");
+      // メニュー項目の順番を変更
+      $(".Nav > ul > li:eq(0)").after($(".Nav > ul > li:eq(1)"));
     } else {
-      //画面サイズが1000px未満のときの処理
+      // 携帯版の処理
       $("body").addClass("spn").removeClass("pc");
       $(".Nav > ul").addClass("close").removeClass("open").css("display", "none");
       $(".Nav .navbtn a").addClass("close").removeClass("open").html("<span>メニューを開く</span>");
     }
   }, 100);
 });
- 
+
 //resize
 $(window).resize(function() {
   var windowWidth = window.innerWidth;
@@ -63,38 +65,7 @@ $(window).resize(function() {
     } else {}
   }, 50);
 });
- 
-//nav dropdown
-$(function() {
-  $(".Nav ul li.parent a").each(function() {
-    var submenu = $(this).next("ul.submenu");
-    var samelevel = $(this).parent().siblings().find("ul.submenu");
-    var samelevelbtn = $(this).parent().siblings().find("a");
-    $(this).addClass("close");
-    $(submenu).addClass("close");
-    $(this).on('click', function() {
-      if ($(this).hasClass("open")) {
-        $(this).removeClass("open").addClass("close");
-        $(submenu).slideUp("fast").removeClass("open").addClass("close");
-      } else {
-        $(samelevel).slideUp("fast").removeClass("open").addClass("close");
-        $(samelevelbtn).removeClass("open").addClass("close");
-        $(submenu).slideDown("fast").removeClass("close").addClass("open");
-        $(this).removeClass("close").addClass("open");
-      }
-      //return false;
-    });
-  });
- 
-  $(document).click(function(event) {
-    if (!$(event.target).closest(".Nav").length) {
-      $(".Nav ul.submenu").slideUp("fast").removeClass("open").addClass("close");
-      $(".Nav ul li.parent a").removeClass("open").addClass("close");
-      //alert('changeイベントが発生しました。');
-    }
-  });
-});
- 
+
 //SP nav
 $(function() {
   $(".Nav .navbtn a").click(function() {
@@ -108,21 +79,39 @@ $(function() {
       $(".Nav ul.submenu").slideUp("fast").removeClass("open").addClass("close");
       $(this).addClass("close").removeClass("open").html("<span>メニューを開く</span>");
     }
+
+    // ハンバーガーメニュー時にニュースとゲーム概要の順序を逆にする
+    if ($(".Nav > ul").hasClass("open")) {
+      var newsElement = $(".Nav > ul > li.parent:eq(0)");
+      var gameElement = $(".Nav > ul > li.parent:eq(1)");
+      if ($("body").hasClass("pc")) {
+        // PC版の場合は順序を逆にする
+        if (!newsElement.hasClass("game-first")) {
+          newsElement.addClass("game-first");
+          newsElement.after(gameElement);
+        }
+      } else {
+        // 携帯版の場合は順序を元に戻す
+        if (newsElement.hasClass("game-first")) {
+          newsElement.removeClass("game-first");
+          gameElement.after(newsElement);
+        }
+      }
+    }
   });
 });
- 
+
+
 //SP アンカーリンク
 $(function() {
   $("ul.submenu a[href^='#']").click(function(event) {
-    //alert('changeイベントが発生しました。');
     $(".Nav ul.submenu").slideUp("fast").removeClass("open").addClass("close");
     $(".Nav ul li.parent a").removeClass("open").addClass("close");
     $(".spn .Nav > ul").addClass("close").removeClass("open").slideUp("fast");
     $(".spn .Nav .navbtn a").addClass("close").removeClass("open").html("<span>メニューを開く</span>");
-    //$(this).removeClass("close").addClass("open").html("<span>メニューを閉じる</span>");
   });
 });
- 
+
 
 
 
